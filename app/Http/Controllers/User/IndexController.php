@@ -23,7 +23,7 @@ class IndexController extends Controller
         // print_r($reg_info);die;
         // echo __METHOD__;die;
         //请求passport 注册接口
-        $url = 'http://passport.1905.com/api/user/reg';
+        // $url = 'http://passport.1905.com/api/user/reg';
         $url = 'http://passport.zmrzzj.com//api/user/reg';
         // echo $url;die;
         $response = CommonModel::curlPost($url,$reg_info);
@@ -37,7 +37,7 @@ class IndexController extends Controller
             'pass'  => '123123',
         ];
         //请求passport 登录接口
-        $url = 'http://passport.1905.com/api/user/login';
+        // $url = 'http://passport.1905.com/api/user/login';
         $url = 'http://passport.zmrzzj.com/api/user/login';
         $response = CommonModel::curlPost($url,$login_info);
         echo '<pre>';print_r($response);echo '</pre>';
@@ -47,7 +47,7 @@ class IndexController extends Controller
         $token = 'e36ce3cbc59b53285eb4';
         $uid = 1;
         //请求passport 获取数据接口
-        $url = 'http://passport.1905.com/api/show/time';
+        // $url = 'http://passport.1905.com/api/show/time';
         $url = 'http://passport.zmrzzj.com/api/show/time';
         $header = [
             'token:'.$token,
