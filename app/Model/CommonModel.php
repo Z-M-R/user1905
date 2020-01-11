@@ -22,7 +22,7 @@ class CommonModel extends Model
         if($error)
         {
             var_dump($error);
-            die;
+            // die;
         }
         // 关闭会话
         curl_close($ch);
@@ -43,7 +43,7 @@ class CommonModel extends Model
         if($error)
         {
             var_dump($error);
-            die;
+            // die;
         }
         // 关闭会话
         curl_close($ch);

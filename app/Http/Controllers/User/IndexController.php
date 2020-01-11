@@ -20,10 +20,14 @@ class IndexController extends Controller
             'pass1'     => '123123',
             'pass2'     => '123123',
         ];
-        //echo __METHOD__;die;
+        // print_r($reg_info);die;
+        // echo __METHOD__;die;
         //请求passport 注册接口
         $url = 'http://passport.1905.com/api/user/reg';
+        $url = 'http://passport.zmrzzj.com//api/user/reg';
+        // echo $url;die;
         $response = CommonModel::curlPost($url,$reg_info);
+        // print_r($response);die;
         echo '<pre>';print_r($response);echo '</pre>';
     }
     public function login()
@@ -34,19 +38,22 @@ class IndexController extends Controller
         ];
         //请求passport 登录接口
         $url = 'http://passport.1905.com/api/user/login';
+        $url = 'http://passport.zmrzzj.com/api/user/login';
         $response = CommonModel::curlPost($url,$login_info);
         echo '<pre>';print_r($response);echo '</pre>';
     }
     public function getData()
     {
-        $token = '71d5593b8c290d8af64e';
-        $uid = 11;
+        $token = 'e36ce3cbc59b53285eb4';
+        $uid = 1;
         //请求passport 获取数据接口
         $url = 'http://passport.1905.com/api/show/time';
+        $url = 'http://passport.zmrzzj.com/api/show/time';
         $header = [
             'token:'.$token,
             'uid:'.$uid
         ];
         $response = CommonModel::curlGet($url,$header);
+        echo '<pre>';print_r($response);echo '</pre>';
     }
 }
